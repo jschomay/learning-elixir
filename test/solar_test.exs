@@ -34,4 +34,16 @@ defmodule SolarTest do
     bad_one = %{classification: :X, stations: 10, scale: 99, date: Timex.iso_triplet({1859, 8, 29})}
     assert deadliest(flares) == bad_one
   end
+
+  test "total flare power", %{data: flares} do
+    Solar.total_flare_power(flares) |> IO.inspect
+  end
+
+  test "flare list", %{data: flares} do
+    Solar.flare_list(flares) |> IO.inspect
+  end
+
+  test "deadly flares", %{data: flares} do
+    Solar.deadly_flares(flares) |> IO.inspect
+  end
 end
